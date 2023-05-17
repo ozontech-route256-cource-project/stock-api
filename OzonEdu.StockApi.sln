@@ -5,6 +5,7 @@ VisualStudioVersion = 17.5.33103.201
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{439A721C-3AD8-4C2F-9943-9627B62E0A9D}"
 	ProjectSection(SolutionItems) = preProject
+		src\OzonEdu.StockApi\Dockerfile = src\OzonEdu.StockApi\Dockerfile
 		readme.md = readme.md
 	EndProjectSection
 EndProject
@@ -13,6 +14,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4D56E594-18EB-489C-97C2-DBD4C69B84E1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OzonEdu.StockApi", "src\OzonEdu.StockApi\OzonEdu.StockApi.csproj", "{451DF9B8-2B0E-4B5C-9BCB-93854266BA4A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{28FB0E27-3A50-4B83-AADC-1A1A1B227C86}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile = Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
