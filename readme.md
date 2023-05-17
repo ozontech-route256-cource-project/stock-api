@@ -2,5 +2,3 @@
 
 **сервис** 
 
-* dfgdfg
-* dfgdfg
