@@ -1,25 +1,31 @@
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using OzonEdu.StockApi.Infrastructure.Extensions;
+using OzonEdu.StockApi.Infrastructure.Middlewares;
+using OzonEdu.StockApi.Services;
 
-namespace OzonEdu.StockApi
+namespace OzonEdu.StockApi;
+
+public class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
+        var builder = WebApplication.CreateBuilder(args);
+        var services = builder.Services;
 
-            // Add services to the container.
+        builder.AddInfrastrusture();
+        builder.AddControllersWithExceptionFilter();
 
-            builder.Services.AddControllers();
+        services.AddSingleton<IStockService, StockService>();
 
-            var app = builder.Build();
+        var app = builder.Build();
+        app.UseMiddleware<RequestLoggingMiddleware>();
+        app.Map("/version", builder => builder.UseMiddleware<VersionMiddleware>());
+        app.UseHttpsRedirection();
+        app.UseRouting();
+        app.MapControllers();
 
-            app.UseHttpsRedirection();
-            app.UseAuthorization();
-            app.MapControllers();
-            app.Run();
-        }
+        app.Run();
     }
 }
