@@ -1,6 +1,8 @@
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using OzonEdu.StockApi.Grpc;
+using OzonEdu.StockApi.GrpcServices;
 using OzonEdu.StockApi.Infrastructure.Extensions;
 using OzonEdu.StockApi.Infrastructure.Middlewares;
 using OzonEdu.StockApi.Services;
@@ -18,6 +20,7 @@ public class Program
         builder.AddControllersWithExceptionFilter();
 
         services.AddSingleton<IStockService, StockService>();
+        services.AddGrpc();
 
         var app = builder.Build();
         app.UseMiddleware<RequestLoggingMiddleware>();
@@ -25,7 +28,7 @@ public class Program
         app.UseHttpsRedirection();
         app.UseRouting();
         app.MapControllers();
-
+        app.MapGrpcService<StockApiGrpcService>();
         app.Run();
     }
 }
