@@ -1,9 +1,9 @@
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using OzonEdu.StockApi.Grpc;
 using OzonEdu.StockApi.GrpcServices;
 using OzonEdu.StockApi.Infrastructure.Extensions;
+using OzonEdu.StockApi.Infrastructure.Interceptors;
 using OzonEdu.StockApi.Infrastructure.Middlewares;
 using OzonEdu.StockApi.Services;
 
@@ -20,7 +20,7 @@ public class Program
         builder.AddControllersWithExceptionFilter();
 
         services.AddSingleton<IStockService, StockService>();
-        services.AddGrpc();
+        services.AddGrpc(options => options.Interceptors.Add<LoggingInterceptor>());
 
         var app = builder.Build();
         app.UseMiddleware<RequestLoggingMiddleware>();

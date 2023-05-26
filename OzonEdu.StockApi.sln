@@ -22,9 +22,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решен
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OzonEdu.StockApi.Grpc", "src\OzonEdu.StockApi.Grpc\OzonEdu.StockApi.Grpc.csproj", "{91F2B4A0-F53F-486D-9E32-CD14BC4BAA97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzonEdu.StockApi.GrpcClient", "src\OzonEdu.StockApi.GrpcClient\OzonEdu.StockApi.GrpcClient.csproj", "{DF5F4479-D383-4507-A641-1614C265D023}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OzonEdu.StockApi.GrpcClient", "src\OzonEdu.StockApi.GrpcClient\OzonEdu.StockApi.GrpcClient.csproj", "{DF5F4479-D383-4507-A641-1614C265D023}"
 	ProjectSection(ProjectDependencies) = postProject
 		{91F2B4A0-F53F-486D-9E32-CD14BC4BAA97} = {91F2B4A0-F53F-486D-9E32-CD14BC4BAA97}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6448E162-2850-4F20-83CE-5147710BE6DA}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
 Global

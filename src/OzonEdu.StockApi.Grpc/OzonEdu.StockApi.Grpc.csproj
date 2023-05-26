@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.23.1" />
     <PackageReference Include="Grpc.Net.Client" Version="2.53.0" />
     <PackageReference Include="Grpc.Tools" Version="2.54.0">

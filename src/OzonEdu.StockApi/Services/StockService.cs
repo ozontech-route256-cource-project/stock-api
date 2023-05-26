@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -57,4 +58,10 @@ public class StockItem
     public int Quantity { get; }
 }
 
+public class CustomException : Exception
+{
+    public CustomException() : base("custom exception")
+    {
+    }
+}
 
